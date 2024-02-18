@@ -10,8 +10,7 @@ function PostCardList() {
    const [posts, setPosts] = useState( [])
     useEffect(() => {
        //we will download the content from dummyapi.io
-       console.log(import.meta.env.VITE_APP_ID);
-       axios.get( "https://dummyapi.io/data/v1/post",
+              axios.get( "https://dummyapi.io/data/v1/post",
         {headers: {'app-id': import.meta.env.VITE_APP_ID}})
         .then( response =>{
        const responseObject = response.data;
