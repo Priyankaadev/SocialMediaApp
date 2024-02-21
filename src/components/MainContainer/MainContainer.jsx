@@ -4,11 +4,11 @@ import PostCardList from '../PostCardList/PostCardList';
 import UserList from '../UserList/UserList'
 
 
-export default function RowAndColumnSpacing() {
+export default function MainContainer(postsList) {
   return (
-    <Box display={'flex'} justifyContent={'space-around'} sx={{ width: '100%', mt: '2rem' }}>
-      <Grid container alignItems={"start"} justifyContent={"center"} rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        <Grid md={6}>
+    <Box container sx={{ width: '100%', mt: '2rem' }}>
+      <Grid container alignItems={"start"} justifyContent={"center"} rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 4 }}>
+        <Grid >
 
        <UserList />
 
@@ -17,9 +17,9 @@ export default function RowAndColumnSpacing() {
           container
           alignItems={"center"}
           justifyContent={"center"}
-          direction={"column"}  md={6}>
+          direction={"column"}  md={8}>
           {/* Posts */}
-       <PostCardList />
+       <PostCardList posts={postsList}/>
         </Grid>
       </Grid>
     </Box>
